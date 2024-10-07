@@ -18,3 +18,7 @@ output "output_dict" {
 output "output_prod" {
   value = var.env
 }
+
+output "output_auto" {
+  value = var.auto_file
+}

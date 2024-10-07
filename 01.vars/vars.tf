@@ -26,3 +26,4 @@ variable "sample_dict" {
 }
 
 variable "env" {}
+variable "auto_file" {}
