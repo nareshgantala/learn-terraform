@@ -22,3 +22,7 @@ output "output_prod" {
 output "output_auto" {
   value = var.auto_file
 }
+
+output "output_terraform" {
+  value = var.print
+}
