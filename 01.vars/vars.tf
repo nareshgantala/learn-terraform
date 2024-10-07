@@ -13,5 +13,8 @@ variable "sample_bolean" {
 }
 
 variable "sample_list" {
-    default = [100, "Hello World", True]
+    default = [
+    100, 
+    "Hello World", 
+    True ]
 }
