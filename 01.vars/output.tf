@@ -14,3 +14,7 @@ output "output_list" {
 output "output_dict" {
   value = var.sample_dict["number"]
 }
+
+output "output_prod" {
+  value = var.env
+}
