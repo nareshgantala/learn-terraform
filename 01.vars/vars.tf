@@ -24,3 +24,5 @@ variable "sample_dict" {
     }
   
 }
+
+variable "env" {}
