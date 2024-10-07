@@ -10,3 +10,7 @@ output "output_list" {
     value = var.sample_list[1]
   
 }
+
+output "output_dict" {
+  value = var.sample_dict[number]
+}
