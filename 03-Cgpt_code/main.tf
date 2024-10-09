@@ -1,11 +1,14 @@
-variable "security_group_id" {
-  default = "sg-0e94234670534fdb0"
+variable "security_group_name" {
+  default = "allow-all"
 }
 
+data "aws_security_groups" "all_sgs" {
+  
+}
 
 data "aws_security_group" "selected" {
-  count = length(aws_security_group.selected.ids) > 0 ? 1 : 0
-  id    = var.security_group_id
+  count = length(data.aws_security_groups.all_sgs) > 0 ? 1 : 0
+  id    = var.security_group_name
 }
 
 variable "instance_type" {
