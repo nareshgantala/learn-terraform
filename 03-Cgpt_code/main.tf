@@ -29,7 +29,7 @@
 # }
 
 variable "names" {
-  type    = list(string)
+  type    = map(string)
   default = ["alice", "bob", "carol"]
 }
 
