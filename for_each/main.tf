@@ -25,11 +25,11 @@ variable "fruits" {
 variable "fruits1" {
   default = {
     apple = {
-        name = apple
+        name = "apple"
         count = 150
     }
     banana = {
-        name = banana
+        name = "banana"
         count = 250
     }
   }
