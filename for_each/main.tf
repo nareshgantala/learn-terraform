@@ -14,6 +14,18 @@ resource "null_resource" "fruits1" {
   
 }
 
+resource "null_resource" "vegetables" {
+  for_each = toset(var.vegetables)
+
+  provisioner "local-exec" {
+    command = "echo vegetable name - ${each.key}"
+  }
+}
+
+variable "vegetables" {
+  default = ["carrot", "capsicum"]
+}
+
 variable "fruits" {
   default = {
     apple = 100,
@@ -34,3 +46,4 @@ variable "fruits1" {
     }
   }
 }
+
