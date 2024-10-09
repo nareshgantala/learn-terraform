@@ -3,7 +3,7 @@ variable "security_group_name" {
 }
 
 data "aws_security_groups" "all_sgs" {
-  
+  # You may want to add a filter or other parameters if needed
 }
 
 data "aws_security_group" "selected" {
@@ -19,7 +19,9 @@ resource "aws_instance" "frontend" {
   count = length(data.aws_security_group.selected) > 0 ? 1 : 0
   ami           = "ami-0b4f379183e5706b9"
   instance_type = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.selected.id]
+
+  # Fix for accessing security group by index
+  vpc_security_group_ids = length(data.aws_security_group.selected) > 0 ? [data.aws_security_group.selected[0].id] : []
 
   tags = {
     Name = "frontend"
