@@ -30,11 +30,11 @@
 
 variable "names" {
   #type    = map(list)
-  default = toset(["alice", "bob", "carol"])
+  default = ["alice", "bob", "carol"]
 }
 
 resource "null_resource" "names" {
-  for_each = var.names
+  for_each = toset(var.names)
   provisioner "local-exec" {
     command = "echo person name - ${each.key}"
   }
