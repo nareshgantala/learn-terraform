@@ -29,8 +29,8 @@
 # }
 
 variable "names" {
-  type    = map(list)
-  default = ["alice", "bob", "carol"]
+  #type    = map(list)
+  default = toset(["alice", "bob", "carol"])
 }
 
 resource "null_resource" "names" {
