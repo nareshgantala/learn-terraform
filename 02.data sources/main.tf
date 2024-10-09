@@ -1,13 +1,16 @@
-# data "aws_security_group" "selected" {
-#   name = "allow-all1"
-# }
+
 
 data "aws_security_groups" "all_sg" {}
+
+data "aws_security_group" "selected" {
+  count = length(data.aws_security_groups.all_sg.ids)
+  id = data.aws_security_groups.all_sg[count.index]
+}
 
 output "all_sg" {
   value = data.aws_security_groups.all_sg
 }
 
-# output "security_group_id" {
-#   value = data.aws_security_group.selected.id
-# }
+output "single" {
+  value = data.aws_security_group.selected
+}
