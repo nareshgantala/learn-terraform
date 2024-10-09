@@ -36,7 +36,7 @@ variable "names" {
 resource "aws_instance" "example" {
   for_each = var.names
   provisioner "local-exec" {
-    command = "echo vegetable name - ${each.key}"
+    command = "echo person name - ${each.key}"
   }
 
 }
