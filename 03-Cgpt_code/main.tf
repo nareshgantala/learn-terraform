@@ -33,7 +33,7 @@ variable "names" {
   default = ["alice", "bob", "carol"]
 }
 
-resource "aws_instance" "example" {
+resource "null_resource" "names" {
   for_each = var.names
   provisioner "local-exec" {
     command = "echo person name - ${each.key}"
