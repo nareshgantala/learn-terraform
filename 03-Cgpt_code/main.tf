@@ -4,7 +4,7 @@ variable "security_group_id" {
 
 
 data "aws_security_group" "selected" {
-  count = length(aws_security_group.existing_sgs.ids) > 0 ? 1 : 0
+  count = length(aws_security_group.selected.ids) > 0 ? 1 : 0
   id    = var.security_group_id
 }
 
