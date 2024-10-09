@@ -36,7 +36,7 @@ variable "names" {
 resource "null_resource" "names" {
   for_each = toset(var.names)
   provisioner "local-exec" {
-    command = "echo person name - ${each.key}"
+    command = "echo person name - each.key"
   }
 
 }
