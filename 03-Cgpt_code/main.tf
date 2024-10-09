@@ -21,7 +21,7 @@ resource "aws_instance" "frontend" {
   instance_type = var.instance_type
 
   # Fix for accessing security group by index
-  vpc_security_group_ids =  [data.aws_security_group.selected][count.index]
+  vpc_security_group_ids =  [data.aws_security_group.selected[count.index]]
 
   tags = {
     Name = "frontend"
