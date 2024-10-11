@@ -14,3 +14,7 @@ variable "sample1" {
 output "sample1" {
   value = var.sample1[0]
 }
+
+output "sample2" {
+  value = element(var.sample1, 0) 
+  }
