@@ -27,5 +27,5 @@ output "sample2" {
   }
 
 output "sample3" {
-  value = lookup(var.sample3, "abc")
+  value = lookup(var.sample3, "efg", "dummy")
 }
