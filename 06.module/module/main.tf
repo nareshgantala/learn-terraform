@@ -1,6 +1,6 @@
 resource "null_resource" "nothing" {
   provisioner "local-exec" {
-    command = "echo Hello from Module-1"
+    command = "echo Hello from Module-1 - INPUT - ${var.input}"
   }
 }
 
@@ -16,3 +16,5 @@ resource "null_resource" "nothing2" {
     command = "echo Hello from Module-3"
   }
 }
+
+variable "input" {}
