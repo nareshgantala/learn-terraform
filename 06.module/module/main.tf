@@ -4,14 +4,14 @@ resource "null_resource" "nothing" {
   }
 }
 
-resource "null_resource" "null" {
+resource "null_resource" "nothing" {
   provisioner "local-exec" {
     command = "echo Hello from Module-2"
   }
 }
 
 
-resource "null_resource" "null" {
+resource "null_resource" "nothing" {
   provisioner "local-exec" {
     command = "echo Hello from Module-3"
   }
